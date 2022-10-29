@@ -1,5 +1,6 @@
 import { client } from "../../libs/client"
 import styles from "../../styles/Home.module.scss"
+import Link from "next/link"
 //SSG
 
 export const getStaticProps = async (context) => {
@@ -32,6 +33,7 @@ export default function BlogId({blog}){
                 dangerouslySetInnerHTML={{ __html: `${blog.body}`}}
                 className={styles.post}>
             </div>
+            <Link href={"/"}>ホームに戻る</Link>
         </main>
     )
 }
