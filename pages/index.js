@@ -1,4 +1,5 @@
 import { client } from "../libs/client"
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 //SSG
@@ -17,7 +18,9 @@ export default function Home({ blog }) {
     <div className={styles.container}>
       {blog.map((blog) => (
         <li key={blog.id}>
-          <a href="">{blog.title}</a>
+          <Link href={`blog/${blog.id}`}>
+            {blog.title}
+          </Link>
         </li>
       ))}
     </div>
